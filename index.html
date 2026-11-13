@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creador de currículum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="barra">
+<h1>Mi currículum</h1>
+<nav class="tabs" aria-label="Vista">
+<button type="button" id="tabDatos" class="on">Elementos</button>
+<button type="button" id="tabVista">Hoja</button>
+</nav>
+<button type="button" id="btnPdf" class="primario">Descargar PDF</button>
+</header>
+<main class="app">
+<section class="panel" aria-label="Elementos">
+<div class="fila">
+<label>Plantilla
+<select id="tpl"><option value="moderna">Moderna (barra lateral)</option><option value="clasica">Clásica (una columna)</option></select></label>
+<label>Color
+<input type="color" id="color" value="#E8A154"></label>
+</div>
+<h2>Elementos de la hoja</h2>
+<p class="nota">Agrega o quita elementos aquí. Para escribir, toca el texto en la hoja. Pasa el mouse sobre un elemento para quitarlo (en celular los botones siempre se ven).</p>
+<div id="elementos"></div>
+<button type="button" class="sec" id="btnLimpiar">Volver a la plantilla original</button>
+</section>
+<section class="vista" aria-label="Hoja">
+<div class="marco" id="marco"><div class="hoja" id="hoja"></div></div>
+</section>
+</main>
+<input type="file" id="fotoIn" accept="image/*" hidden>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
