@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creador de currículum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header class="barra">
+<h1>Mi currículum</h1>
+<nav class="tabs" aria-label="Vista">
+<button type="button" id="tabDatos" class="on">Datos</button>
+<button type="button" id="tabVista">Vista previa</button>
+</nav>
+<button type="button" id="btnPdf" class="primario">Descargar PDF</button>
+</header>
+<main class="app">
+<section class="panel" id="panelDatos" aria-label="Datos del currículum">
+<div class="fila">
+<label>Plantilla
+<select id="tpl"><option value="moderna">Moderna (barra lateral)</option><option value="clasica">Clásica (una columna)</option></select></label>
+<label>Color
+<input type="color" id="color" value="#E8A154"></label>
+</div>
+<h2>Datos personales</h2>
+<label>Nombre completo<input data-k="nombre" autocomplete="name"></label>
+<label>Puesto o profesión<input data-k="puesto"></label>
+<div class="fila">
+<label>Teléfono<input data-k="tel" type="tel"></label>
+<label>Correo<input data-k="correo" type="email"></label>
+</div>
+<div class="fila">
+<label>Ciudad, país<input data-k="ciudad"></label>
+<label>Enlace (LinkedIn, portafolio)<input data-k="enlace"></label>
+</div>
+<label>Perfil (3 o 4 líneas)<textarea data-k="perfil" rows="4"></textarea></label>
+<h2>Experiencia</h2>
+<div id="listaExp"></div>
+<button type="button" class="sec" data-add="exp">Agregar experiencia</button>
+<h2>Educación</h2>
+<div id="listaEdu"></div>
+<button type="button" class="sec" data-add="edu">Agregar estudio</button>
+<h2>Más información</h2>
+<label>Habilidades (separadas por coma)<input data-k="habilidades"></label>
+<label>Idiomas (separados por coma)<input data-k="idiomas"></label>
+<label>Cursos, proyectos o voluntariado (uno por línea)<textarea data-k="extra" rows="4"></textarea></label>
+<button type="button" class="sec" id="btnLimpiar">Borrar todo</button>
+</section>
+<section class="vista" id="panelVista" aria-label="Vista previa">
+<div class="marco" id="marco"><div class="hoja" id="hoja"></div></div>
+</section>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
